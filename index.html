@@ -10,13 +10,16 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,800;1,6..96,500;1,6..96,700&family=Figtree:wght@400;500;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/estilo.css?v=20261112182708">
+<link rel="stylesheet" href="assets/estilo.css?v=20261112192902">
 </head>
 <body>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="coroa" viewBox="0 0 64 40"><path d="M4 34 L8 10 L20 22 L32 4 L44 22 L56 10 L60 34 Z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><circle cx="8" cy="8" r="3" fill="currentColor"/><circle cx="32" cy="3" r="3" fill="currentColor"/><circle cx="56" cy="8" r="3" fill="currentColor"/><path d="M6 38 H58" stroke="currentColor" stroke-width="3"/></symbol>
 </svg>
+
+<!-- trança de 3 mechas: desce pela lateral e se trança com a rolagem (desenhada em loja.js) -->
+<div class="tranca" id="tranca" aria-hidden="true"><svg id="trancaSvg"></svg><span class="tranca-anel"></span></div>
 
 <header class="topo">
   <a class="marca" href="#inicio" aria-label="Rei das Fibras — início">
@@ -35,59 +38,53 @@
 
 <main id="inicio">
 
-  <!-- ABERTURA: a proclamação -->
-  <section class="abertura">
-    <p class="selo-topo"><svg class="ic-coroa"><use href="#coroa"/></svg> 108 mil seguidores no Instagram</p>
-    <h1 class="proclama">
-      <span class="l1">Seja quem</span>
-      <span class="l2">você <em>quiser.</em></span>
-    </h1>
-    <div class="trono">
-      <figure class="arco a1" data-par="-0.06"><img src="fotos/rainha-coroa.jpg" alt="Cliente com tranças e acessório de coroa no cabelo"></figure>
-      <figure class="arco a2" data-par="0.05"><img src="fotos/rainha-trancas-azul.jpg" alt="Cliente com rabo de cavalo trançado em azul"></figure>
-      <figure class="arco a3" data-par="-0.03"><img src="fotos/rainha-ondas.jpg" alt="Cliente com cabelo longo ondulado"></figure>
-    </div>
-    <div class="abertura-pe">
-      <p>Jumbos, orgânicos, bio e fibra de queratina.<br>Loja física em Pernambués e <strong>entrega para todo o Brasil</strong>.</p>
-      <a class="botao" href="#vitrine">Ver a vitrine</a>
+  <!-- CENA: o espelho do salão. A rolagem troca a cliente e a palavra. -->
+  <section class="espelho-cena" id="espelho" aria-label="Seja quem você quiser">
+    <div class="palco">
+      <div class="espelho">
+        <div class="lampadas" id="lampadas" aria-hidden="true"></div>
+        <div class="vidro" id="vidro">
+          <figure class="reflexo"><img src="fotos/rainha-coroa.jpg" alt="Cliente com tranças nagô e acessório de coroa no cabelo" fetchpriority="high"><figcaption>@abonecaediva</figcaption></figure>
+          <figure class="reflexo"><img src="fotos/rainha-trancas-azul.jpg" alt="Cliente com rabo de cavalo trançado em azul" loading="lazy"><figcaption>cliente @fibrasrei</figcaption></figure>
+          <figure class="reflexo"><img src="fotos/rainha-cacheada.jpg" alt="Cliente com cabelo cacheado longo" loading="lazy"><figcaption>@lisiabispo1</figcaption></figure>
+          <figure class="reflexo"><img src="fotos/rainha-ruiva.jpg" alt="Cliente com cabelo cacheado ruivo" loading="lazy"><figcaption>cliente @fibrasrei</figcaption></figure>
+          <figure class="reflexo"><img style="object-position:50% 0" src="fotos/rainha-loira.jpg" alt="Cliente com cabelo cacheado loiro mesclado" loading="lazy"><figcaption>cliente @fibrasrei</figcaption></figure>
+          <figure class="reflexo"><img src="fotos/rainha-ondas.jpg" alt="Cliente com cabelo ondulado até a cintura" loading="lazy"><figcaption>@graazyh__</figcaption></figure>
+          <span class="brilho" id="brilho"></span>
+        </div>
+      </div>
+
+      <div class="espelho-texto">
+        <p class="selo-topo"><svg class="ic-coroa"><use href="#coroa"/></svg> 108 mil seguidores no Instagram</p>
+        <h1 class="proclama">
+          <span class="l1">Seja quem você quiser:</span>
+          <span class="palavras" id="palavras" aria-hidden="true"><span>rainha.</span><span>trançada.</span><span>cacheada.</span><span>ruiva.</span><span>loira.</span><span>ondulada.</span></span>
+          <span class="so-leitor">rainha, trançada, cacheada, ruiva, loira, ondulada.</span>
+        </h1>
+        <p class="espelho-sub">Jumbos, orgânicos, bio e fibra de queratina. Loja física em Pernambués e <strong>entrega para todo o Brasil</strong>.</p>
+        <div class="espelho-acoes">
+          <a class="botao" href="#vitrine">Ver a vitrine</a>
+          <a class="botao vazado" href="#vitrine" id="espelhoAtalho" data-cat="todos">Ver tudo</a>
+        </div>
+        <div class="pontos" id="pontos" role="group" aria-label="Trocar o reflexo"></div>
+      </div>
     </div>
   </section>
-
-  <!-- faixa que corre com a rolagem -->
-  <div class="faixas" aria-hidden="true">
-    <div class="faixa f1"><span>Jumbo ♛ Orgânico ♛ Bio ♛ Fibra de queratina ♛ Jumbo ♛ Orgânico ♛ Bio ♛ Fibra de queratina ♛ Jumbo ♛ Orgânico ♛ Bio ♛ Fibra de queratina ♛</span></div>
-    <div class="faixa f2"><span>Rainha de tranças · Rainha de cachos · Rainha do baby hair · Rainha de tranças · Rainha de cachos · Rainha do baby hair · Rainha de tranças ·</span></div>
-  </div>
 
   <!-- VITRINE -->
   <section class="vitrine" id="vitrine">
-    <div class="cab-secao">
-      <p class="sobre">O acervo</p>
+    <div class="vitrine-cab">
       <h2>Escolha a sua <em>coroa</em>.</h2>
+      <p class="aviso-exemplo">Na demonstração, só o <strong>Cabelo Catarina</strong> e o <strong>Mousse Fixa Liss</strong> têm preço real. Os itens marcados <span class="tag-ex">exemplo</span> mostram como o catálogo completo vai ficar.</p>
     </div>
     <div class="filtros" role="group" aria-label="Filtrar por tipo" id="filtros"></div>
     <label class="busca"><span>Buscar</span><input id="busca" type="search" placeholder="Nome, cor, tipo…" autocomplete="off"></label>
-    <p class="aviso-exemplo">Na demonstração, só o <strong>Cabelo Catarina</strong> e o <strong>Mousse Fixa Liss</strong> têm preço real. Os itens marcados <span class="tag-ex">exemplo</span> mostram como o catálogo completo vai ficar.</p>
     <div class="grade" id="grade"></div>
-  </section>
-
-  <!-- GALERIA DAS RAINHAS: corre de lado com a rolagem -->
-  <section class="rainhas" aria-label="Clientes da loja">
-    <p class="gigante" aria-hidden="true"><span>RAINHAS RAINHAS RAINHAS</span></p>
-    <div class="trilho" id="trilho">
-      <figure><img src="fotos/rainha-spray.jpg" alt="Cliente com tranças longas" loading="lazy"><figcaption>@apretagabii</figcaption></figure>
-      <figure><img src="fotos/rainha-cacheada.jpg" alt="Cliente com cabelo cacheado longo" loading="lazy"><figcaption>@lisiabispo1</figcaption></figure>
-      <figure><img src="fotos/rainha-coroa.jpg" alt="Cliente com tranças nagô e coroa" loading="lazy"><figcaption>@abonecaediva</figcaption></figure>
-      <figure><img src="fotos/rainha-ondas.jpg" alt="Cliente com cabelo ondulado até a cintura" loading="lazy"><figcaption>@graazyh__</figcaption></figure>
-      <figure><img src="fotos/rainha-rosa.jpg" alt="Modelo com tranças presas em coque" loading="lazy"><figcaption>Rei das Fibras</figcaption></figure>
-    </div>
-    <p class="rainhas-txt">Quem sai da loja, sai rainha. As fotos são de clientes que marcaram <strong>@fibrasrei</strong>.</p>
   </section>
 
   <!-- ATACADO -->
   <section class="atacado" id="atacado">
     <div class="atacado-txt">
-      <p class="sobre">Para revender</p>
       <h2>Revende? <em>Compra no atacado.</em></h2>
       <p>Salão, trancista ou revendedora: a Rei das Fibras atende pedido de atacado com envio para todo o Brasil.</p>
       <dl class="atacado-dados">
@@ -100,42 +97,42 @@
     <figure class="atacado-foto"><img src="fotos/rainha-box.jpg" alt="Cliente com box braids longas" loading="lazy"></figure>
   </section>
 
-  <!-- COMO COMPRAR -->
+  <!-- COMO COMPRAR: a conversa que o site monta -->
   <section class="como" id="como-comprar">
-    <div class="cab-secao">
-      <p class="sobre">Como comprar</p>
-      <h2>Quatro passos até a <em>coroa</em>.</h2>
+    <div class="como-txt">
+      <h2>Comprar é uma <em>conversa</em>.</h2>
+      <p>Sem cadastro e sem cartão no site. Você monta a sacola, o pedido sai pronto no WhatsApp da loja e a equipe responde com o frete e a forma de pagamento.</p>
+      <p class="como-num">WhatsApp da loja: <strong id="zapTexto"></strong></p>
     </div>
-    <ol class="passos">
-      <li><b>I</b><div><h3>Escolha na vitrine</h3><p>Abra o produto, veja comprimento, peso, cores e método, e escolha a cor.</p></div></li>
-      <li><b>II</b><div><h3>Monte a sacola</h3><p>Coloque quantas unidades quiser e diga se é delivery em Salvador, envio para o Brasil ou retirada na loja.</p></div></li>
-      <li><b>III</b><div><h3>Envie pelo WhatsApp</h3><p>O pedido sai pronto, com itens, cores e entrega, direto para o (71) 99690-2189.</p></div></li>
-      <li><b>IV</b><div><h3>A loja confirma</h3><p>A equipe responde com o frete e a forma de pagamento, e separa o seu cabelo.</p></div></li>
-    </ol>
+    <div class="conversa" aria-label="Exemplo de como o pedido chega no WhatsApp">
+      <p class="conversa-topo"><img src="fotos/logo.jpg" alt="" width="36" height="36"> Rei das Fibras</p>
+      <div class="balao eu">Olá, Rei das Fibras! 👑 Quero fazer este pedido pelo site:<br><br>• 1x Cabelo Catarina — cor 350<br>• 1x Mousse Fixa Liss<br>Entrega: Delivery em Salvador</div>
+      <div class="balao loja">Recebido, rainha! Já te passo o frete e a forma de pagamento.</div>
+      <div class="balao eu">Fechado ✨</div>
+      <div class="balao loja">Seu cabelo já está separado. 👑</div>
+      <p class="conversa-nota">Exemplo de conversa. A resposta real é da equipe da loja.</p>
+    </div>
   </section>
 
-  <!-- CUIDADOS -->
+  <!-- CUIDADOS: etiqueta pendurada -->
   <section class="cuidados" id="cuidados">
-    <div class="cab-secao">
-      <p class="sobre">Cuidados com o cabelo</p>
+    <figure class="cuidados-foto"><img src="fotos/rainha-spray.jpg" alt="Cliente borrifando spray nas tranças" loading="lazy"><figcaption>@apretagabii</figcaption></figure>
+    <div class="etiqueta">
+      <span class="etiqueta-furo" aria-hidden="true"></span>
       <h2>Rainha cuida da <em>coroa</em>.</h2>
+      <dl class="cuidados-lista">
+        <div><dt>Tranças</dt><dd>Lave com cuidado, sem esfregar a raiz, e seque bem antes de prender. Cabelo úmido preso por muito tempo pega cheiro.</dd></div>
+        <div><dt>Cachos e orgânicos</dt><dd>Desembarace com os dedos ou pente de dentes largos, sempre das pontas para cima.</dd></div>
+        <div><dt>Finalização</dt><dd>O Mousse Fixa Liss modela tranças, cachos e baby hair, com fixação de até 24 horas.</dd></div>
+        <div><dt>Na hora de dormir</dt><dd>Touca ou fronha de cetim diminuem o atrito e o frizz.</dd></div>
+      </dl>
+      <p class="nota">Dúvida sobre o seu cabelo? Pergunte no WhatsApp antes de comprar.</p>
     </div>
-    <div class="cuidados-grade">
-      <figure class="cuidados-foto"><img src="fotos/rainha-spray.jpg" alt="Cliente borrifando spray nas tranças" loading="lazy"></figure>
-      <ul class="dicas">
-        <li><h3>Tranças</h3><p>Lave com cuidado, sem esfregar a raiz, e seque bem antes de prender. Cabelo úmido preso por muito tempo pega cheiro.</p></li>
-        <li><h3>Cachos e orgânicos</h3><p>Desembarace com os dedos ou pente de dentes largos, sempre das pontas para cima.</p></li>
-        <li><h3>Finalização</h3><p>O Mousse Fixa Liss modela tranças, cachos e baby hair, com fixação de até 24 horas.</p></li>
-        <li><h3>Na hora de dormir</h3><p>Touca ou fronha de cetim diminuem o atrito e o frizz.</p></li>
-      </ul>
-    </div>
-    <p class="nota">Dúvida sobre o seu cabelo? Pergunte no WhatsApp antes de comprar.</p>
   </section>
 
   <!-- LOJA FÍSICA -->
   <section class="loja" id="loja">
     <div class="loja-txt">
-      <p class="sobre">A loja física</p>
       <h2>O trono fica em <em>Pernambués</em>.</h2>
       <address id="endereco"></address>
       <table class="horario" id="horario"><caption>Horário</caption></table>
@@ -145,7 +142,7 @@
         <a class="botao vazado" id="zapLoja" target="_blank" rel="noopener">Chamar no WhatsApp</a>
       </div>
     </div>
-    <figure class="loja-foto"><img src="fotos/rainha-ruiva.jpg" alt="Cliente com cabelo cacheado ruivo" loading="lazy"></figure>
+    <figure class="loja-foto"><img src="fotos/rainha-rosa.jpg" alt="Modelo com tranças presas em coque" loading="lazy"></figure>
   </section>
 
 </main>
@@ -190,7 +187,9 @@
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script src="assets/config.js?v=20261112182708"></script>
-<script src="assets/loja.js?v=20261112182708"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="assets/config.js?v=20261112192902"></script>
+<script src="assets/loja.js?v=20261112192902"></script>
 </body>
 </html>
