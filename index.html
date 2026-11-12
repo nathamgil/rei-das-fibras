@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rei das Fibras — Pernambués, Salvador</title>
+<meta name="description" content="Jumbos, orgânicos, bio e fibra de queratina. Loja física em Pernambués e entrega para todo o Brasil. Seja quem você quiser.">
+<meta name="theme-color" content="#5c0b1f">
+<link rel="icon" href="fotos/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,800;1,6..96,500;1,6..96,700&family=Figtree:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/estilo.css?v=20261112182708">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="coroa" viewBox="0 0 64 40"><path d="M4 34 L8 10 L20 22 L32 4 L44 22 L56 10 L60 34 Z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><circle cx="8" cy="8" r="3" fill="currentColor"/><circle cx="32" cy="3" r="3" fill="currentColor"/><circle cx="56" cy="8" r="3" fill="currentColor"/><path d="M6 38 H58" stroke="currentColor" stroke-width="3"/></symbol>
+</svg>
+
+<header class="topo">
+  <a class="marca" href="#inicio" aria-label="Rei das Fibras — início">
+    <img src="fotos/logo.jpg" alt="" width="44" height="44">
+    <span>Rei das Fibras<small>Pernambués · Salvador</small></span>
+  </a>
+  <nav class="menu" aria-label="Seções">
+    <a href="#vitrine">Vitrine</a>
+    <a href="#atacado">Atacado</a>
+    <a href="#como-comprar">Como comprar</a>
+    <a href="#cuidados">Cuidados</a>
+    <a href="#loja">A loja</a>
+  </nav>
+  <button class="btn-sacola" id="abrirSacola" aria-label="Abrir sacola">Sacola <b id="contaSacola">0</b></button>
+</header>
+
+<main id="inicio">
+
+  <!-- ABERTURA: a proclamação -->
+  <section class="abertura">
+    <p class="selo-topo"><svg class="ic-coroa"><use href="#coroa"/></svg> 108 mil seguidores no Instagram</p>
+    <h1 class="proclama">
+      <span class="l1">Seja quem</span>
+      <span class="l2">você <em>quiser.</em></span>
+    </h1>
+    <div class="trono">
+      <figure class="arco a1" data-par="-0.06"><img src="fotos/rainha-coroa.jpg" alt="Cliente com tranças e acessório de coroa no cabelo"></figure>
+      <figure class="arco a2" data-par="0.05"><img src="fotos/rainha-trancas-azul.jpg" alt="Cliente com rabo de cavalo trançado em azul"></figure>
+      <figure class="arco a3" data-par="-0.03"><img src="fotos/rainha-ondas.jpg" alt="Cliente com cabelo longo ondulado"></figure>
+    </div>
+    <div class="abertura-pe">
+      <p>Jumbos, orgânicos, bio e fibra de queratina.<br>Loja física em Pernambués e <strong>entrega para todo o Brasil</strong>.</p>
+      <a class="botao" href="#vitrine">Ver a vitrine</a>
+    </div>
+  </section>
+
+  <!-- faixa que corre com a rolagem -->
+  <div class="faixas" aria-hidden="true">
+    <div class="faixa f1"><span>Jumbo ♛ Orgânico ♛ Bio ♛ Fibra de queratina ♛ Jumbo ♛ Orgânico ♛ Bio ♛ Fibra de queratina ♛ Jumbo ♛ Orgânico ♛ Bio ♛ Fibra de queratina ♛</span></div>
+    <div class="faixa f2"><span>Rainha de tranças · Rainha de cachos · Rainha do baby hair · Rainha de tranças · Rainha de cachos · Rainha do baby hair · Rainha de tranças ·</span></div>
+  </div>
+
+  <!-- VITRINE -->
+  <section class="vitrine" id="vitrine">
+    <div class="cab-secao">
+      <p class="sobre">O acervo</p>
+      <h2>Escolha a sua <em>coroa</em>.</h2>
+    </div>
+    <div class="filtros" role="group" aria-label="Filtrar por tipo" id="filtros"></div>
+    <label class="busca"><span>Buscar</span><input id="busca" type="search" placeholder="Nome, cor, tipo…" autocomplete="off"></label>
+    <p class="aviso-exemplo">Na demonstração, só o <strong>Cabelo Catarina</strong> e o <strong>Mousse Fixa Liss</strong> têm preço real. Os itens marcados <span class="tag-ex">exemplo</span> mostram como o catálogo completo vai ficar.</p>
+    <div class="grade" id="grade"></div>
+  </section>
+
+  <!-- GALERIA DAS RAINHAS: corre de lado com a rolagem -->
+  <section class="rainhas" aria-label="Clientes da loja">
+    <p class="gigante" aria-hidden="true"><span>RAINHAS RAINHAS RAINHAS</span></p>
+    <div class="trilho" id="trilho">
+      <figure><img src="fotos/rainha-spray.jpg" alt="Cliente com tranças longas" loading="lazy"><figcaption>@apretagabii</figcaption></figure>
+      <figure><img src="fotos/rainha-cacheada.jpg" alt="Cliente com cabelo cacheado longo" loading="lazy"><figcaption>@lisiabispo1</figcaption></figure>
+      <figure><img src="fotos/rainha-coroa.jpg" alt="Cliente com tranças nagô e coroa" loading="lazy"><figcaption>@abonecaediva</figcaption></figure>
+      <figure><img src="fotos/rainha-ondas.jpg" alt="Cliente com cabelo ondulado até a cintura" loading="lazy"><figcaption>@graazyh__</figcaption></figure>
+      <figure><img src="fotos/rainha-rosa.jpg" alt="Modelo com tranças presas em coque" loading="lazy"><figcaption>Rei das Fibras</figcaption></figure>
+    </div>
+    <p class="rainhas-txt">Quem sai da loja, sai rainha. As fotos são de clientes que marcaram <strong>@fibrasrei</strong>.</p>
+  </section>
+
+  <!-- ATACADO -->
+  <section class="atacado" id="atacado">
+    <div class="atacado-txt">
+      <p class="sobre">Para revender</p>
+      <h2>Revende? <em>Compra no atacado.</em></h2>
+      <p>Salão, trancista ou revendedora: a Rei das Fibras atende pedido de atacado com envio para todo o Brasil.</p>
+      <dl class="atacado-dados">
+        <div><dt>Pedido mínimo</dt><dd id="minimo">a confirmar com a loja</dd></div>
+        <div><dt>Envio</dt><dd>Todo o Brasil</dd></div>
+      </dl>
+      <p>Monte a sacola, marque <strong>"pedido de atacado"</strong> no fim e a loja responde com a tabela.</p>
+      <a class="botao claro" id="zapAtacado" target="_blank" rel="noopener">Pedir a tabela de atacado</a>
+    </div>
+    <figure class="atacado-foto"><img src="fotos/rainha-box.jpg" alt="Cliente com box braids longas" loading="lazy"></figure>
+  </section>
+
+  <!-- COMO COMPRAR -->
+  <section class="como" id="como-comprar">
+    <div class="cab-secao">
+      <p class="sobre">Como comprar</p>
+      <h2>Quatro passos até a <em>coroa</em>.</h2>
+    </div>
+    <ol class="passos">
+      <li><b>I</b><div><h3>Escolha na vitrine</h3><p>Abra o produto, veja comprimento, peso, cores e método, e escolha a cor.</p></div></li>
+      <li><b>II</b><div><h3>Monte a sacola</h3><p>Coloque quantas unidades quiser e diga se é delivery em Salvador, envio para o Brasil ou retirada na loja.</p></div></li>
+      <li><b>III</b><div><h3>Envie pelo WhatsApp</h3><p>O pedido sai pronto, com itens, cores e entrega, direto para o (71) 99690-2189.</p></div></li>
+      <li><b>IV</b><div><h3>A loja confirma</h3><p>A equipe responde com o frete e a forma de pagamento, e separa o seu cabelo.</p></div></li>
+    </ol>
+  </section>
+
+  <!-- CUIDADOS -->
+  <section class="cuidados" id="cuidados">
+    <div class="cab-secao">
+      <p class="sobre">Cuidados com o cabelo</p>
+      <h2>Rainha cuida da <em>coroa</em>.</h2>
+    </div>
+    <div class="cuidados-grade">
+      <figure class="cuidados-foto"><img src="fotos/rainha-spray.jpg" alt="Cliente borrifando spray nas tranças" loading="lazy"></figure>
+      <ul class="dicas">
+        <li><h3>Tranças</h3><p>Lave com cuidado, sem esfregar a raiz, e seque bem antes de prender. Cabelo úmido preso por muito tempo pega cheiro.</p></li>
+        <li><h3>Cachos e orgânicos</h3><p>Desembarace com os dedos ou pente de dentes largos, sempre das pontas para cima.</p></li>
+        <li><h3>Finalização</h3><p>O Mousse Fixa Liss modela tranças, cachos e baby hair, com fixação de até 24 horas.</p></li>
+        <li><h3>Na hora de dormir</h3><p>Touca ou fronha de cetim diminuem o atrito e o frizz.</p></li>
+      </ul>
+    </div>
+    <p class="nota">Dúvida sobre o seu cabelo? Pergunte no WhatsApp antes de comprar.</p>
+  </section>
+
+  <!-- LOJA FÍSICA -->
+  <section class="loja" id="loja">
+    <div class="loja-txt">
+      <p class="sobre">A loja física</p>
+      <h2>O trono fica em <em>Pernambués</em>.</h2>
+      <address id="endereco"></address>
+      <table class="horario" id="horario"><caption>Horário</caption></table>
+      <p class="entrega-nota" id="entregaNota"></p>
+      <div class="loja-botoes">
+        <a class="botao" id="linkMapa" target="_blank" rel="noopener">Abrir no mapa</a>
+        <a class="botao vazado" id="zapLoja" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+      </div>
+    </div>
+    <figure class="loja-foto"><img src="fotos/rainha-ruiva.jpg" alt="Cliente com cabelo cacheado ruivo" loading="lazy"></figure>
+  </section>
+
+</main>
+
+<footer class="rodape">
+  <svg class="ic-coroa grande"><use href="#coroa"/></svg>
+  <p class="rodape-lema">Seja quem você quiser.</p>
+  <p>Rei das Fibras · Pernambués, Salvador/BA · <a href="https://instagram.com/fibrasrei" target="_blank" rel="noopener">@fibrasrei</a></p>
+  <p class="zync">Site de demonstração feito pela <a href="https://zynchub.com.br" target="_blank" rel="noopener">Zync</a> · <a href="admin.html">painel da loja</a></p>
+</footer>
+
+<!-- FICHA DO PRODUTO -->
+<dialog class="ficha" id="ficha" aria-labelledby="fichaNome">
+  <button class="fechar" data-fechar aria-label="Fechar">×</button>
+  <div class="ficha-corpo" id="fichaCorpo"></div>
+</dialog>
+
+<!-- SACOLA -->
+<div class="veu" id="veu" hidden></div>
+<aside class="sacola" id="sacola" aria-label="Sacola" aria-hidden="true">
+  <div class="sacola-topo">
+    <h2>Sua sacola</h2>
+    <button class="fechar" id="fecharSacola" aria-label="Fechar sacola">×</button>
+  </div>
+  <div class="sacola-lista" id="sacolaLista"></div>
+  <form class="sacola-pe" id="formPedido">
+    <p class="subtotal"><span>Subtotal</span><b id="subtotal">R$ 0,00</b></p>
+    <p class="sub-nota" id="subNota"></p>
+    <fieldset class="entrega">
+      <legend>Como você quer receber?</legend>
+      <label><input type="radio" name="entrega" value="salvador" checked><span>Delivery em Salvador</span></label>
+      <label><input type="radio" name="entrega" value="brasil"><span>Envio para o Brasil</span></label>
+      <label><input type="radio" name="entrega" value="retirada"><span>Retirar na loja</span></label>
+    </fieldset>
+    <p class="entrega-info" id="entregaInfo"></p>
+    <label class="campo"><span>Seu nome</span><input name="nome" required autocomplete="name"></label>
+    <label class="campo" id="campoEnd"><span>Endereço ou CEP</span><input name="endereco" autocomplete="street-address"></label>
+    <label class="check"><input type="checkbox" name="atacado"><span>É pedido de atacado (revenda)</span></label>
+    <button class="botao cheio" type="submit" id="enviar">Enviar pedido no WhatsApp</button>
+  </form>
+</aside>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/config.js?v=20261112182708"></script>
+<script src="assets/loja.js?v=20261112182708"></script>
+</body>
+</html>

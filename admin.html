@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Painel — Rei das Fibras</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="fotos/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;1,6..96,500&family=Figtree:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/estilo.css?v=20261112182708">
+<style>
+  body{background:var(--papel)}
+  .entrar{max-width:420px;margin:12vh auto;padding:0 16px;text-align:center}
+  .entrar img{width:84px;height:84px;border-radius:50%;margin:0 auto 16px}
+  .entrar h1{font-size:40px;font-style:italic;margin-bottom:8px}
+  .entrar form{display:grid;gap:12px;margin-top:22px;text-align:left}
+  .erro{color:#a1001f;font-weight:700;min-height:1.4em;margin:0}
+  .painel{max-width:1100px;margin:0 auto;padding:20px 16px 80px}
+  .painel-topo{display:flex;flex-wrap:wrap;align-items:center;gap:12px;justify-content:space-between;margin-bottom:18px}
+  .painel-topo h1{font-size:34px;font-style:italic}
+  .abas{display:flex;gap:8px;margin-bottom:20px;border-bottom:2px solid var(--tinta)}
+  .abas button{min-height:48px;padding:0 18px;border:0;background:none;font:800 17px var(--sans);color:var(--cinza);cursor:pointer;border-bottom:4px solid transparent;margin-bottom:-2px}
+  .abas button[aria-selected="true"]{color:var(--vinho);border-color:var(--vinho)}
+  .resumo{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:20px}
+  .resumo div{border:2px solid var(--tinta);border-radius:12px;padding:12px;min-width:0;background:#fff}
+  .resumo b{display:block;font:500 clamp(20px,5.5vw,30px) var(--serif);color:var(--vinho);white-space:nowrap;overflow-wrap:normal}
+  .resumo span{font-size:16px;color:var(--cinza)}
+  @media (max-width:520px){.resumo{grid-template-columns:repeat(2,minmax(0,1fr))}.resumo div:last-child{grid-column:1/-1}}
+  .lista{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
+  .prod{display:grid;grid-template-columns:72px minmax(0,1fr);gap:14px;padding:14px;border:2px solid var(--linha);border-radius:12px;background:#fff}
+  .prod img{width:72px;height:92px;object-fit:cover;border-radius:999px 999px 4px 4px}
+  .prod h3{font-size:21px;overflow-wrap:anywhere}
+  .prod .tags{font-size:16px;color:var(--cinza);margin:2px 0 10px}
+  .campos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .campos label{display:block;min-width:0}
+  .campos span{display:block;font-weight:700;font-size:16px;margin-bottom:3px}
+  .campos input[type=text],.campos input[type=number],.campos select{width:100%;min-height:46px;border:2px solid var(--tinta);border-radius:8px;padding:0 10px;font:500 17px var(--sans);background:#fff;color:var(--tinta)}
+  .campos .larga{grid-column:1/-1}
+  .liga{display:flex!important;align-items:center;gap:8px;min-height:46px;font-weight:700}
+  .liga input{width:22px;height:22px;accent-color:var(--vinho)}
+  .acoes{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+  .botao.peq{min-height:44px;font-size:16px;padding:0 18px}
+  .pedido{border:2px solid var(--linha);border-radius:12px;padding:16px;background:#fff}
+  .pedido header{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:baseline}
+  .pedido h3{font-size:24px}
+  .pedido ul{margin:10px 0;padding-left:20px}
+  .pedido .meta{color:var(--cinza);font-size:16px;margin:4px 0}
+  .pedido select{min-height:44px;border:2px solid var(--tinta);border-radius:8px;font:700 16px var(--sans);padding:0 10px;background:#fff}
+  .st-novo{color:#a1001f}.selo-at{display:inline-block;background:var(--vinho);color:#fff;font-weight:800;font-size:14px;padding:3px 10px;border-radius:999px;margin-left:6px}
+  .vazio-p{padding:30px 0;font-size:19px}
+  @media (min-width:760px){.prod{grid-template-columns:96px minmax(0,1fr)}.prod img{width:96px;height:124px}.campos{grid-template-columns:repeat(4,minmax(0,1fr))}}
+</style>
+</head>
+<body>
+
+<section class="entrar" id="telaEntrar">
+  <img src="fotos/logo.jpg" alt="Rei das Fibras">
+  <h1>Painel da loja</h1>
+  <p>Produtos, preços, promoções, esgotados e pedidos.</p>
+  <form id="formEntrar">
+    <label class="campo"><span>Senha</span><input type="password" id="senha" autocomplete="current-password" required></label>
+    <p class="erro" id="erro"></p>
+    <button class="botao cheio">Entrar</button>
+    <p style="font-size:16px;color:var(--cinza);text-align:center">Demonstração: a senha é <strong>zync</strong>.</p>
+  </form>
+</section>
+
+<main class="painel" id="painel" hidden>
+  <div class="painel-topo">
+    <h1>Rei das Fibras · painel</h1>
+    <div class="acoes" style="margin:0"><a class="botao vazado peq" href="index.html">Ver a loja</a><button class="botao vazado peq" id="sair">Sair</button></div>
+  </div>
+  <div class="abas" role="tablist">
+    <button role="tab" aria-selected="true" data-aba="pedidos">Pedidos</button>
+    <button role="tab" aria-selected="false" data-aba="produtos">Produtos</button>
+  </div>
+
+  <section id="aba-pedidos">
+    <div class="resumo" id="resumo"></div>
+    <div class="lista" id="listaPedidos"></div>
+  </section>
+
+  <section id="aba-produtos" hidden>
+    <p>Mude preço, preço "de" (promoção) e marque esgotado. Ao salvar, a vitrine deste navegador já mostra a mudança.</p>
+    <div class="lista" id="listaProdutos"></div>
+    <div class="acoes">
+      <button class="botao" id="salvar">Salvar alterações</button>
+      <button class="botao vazado" id="novo">Novo produto</button>
+      <button class="botao vazado" id="restaurar">Voltar ao original</button>
+    </div>
+  </section>
+</main>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="assets/config.js?v=20261112182708"></script>
+<script src="assets/admin.js?v=20261112182708"></script>
+</body>
+</html>
